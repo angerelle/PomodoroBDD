@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark"
+        xmlns:m="library://melomel/2010">
+
+    <fx:Declarations>
+        <m:Melomel/>
+    </fx:Declarations>
+    <s:layout>
+        <s:VerticalLayout/>
+    </s:layout>
+    <s:Button label="Start" click="onStartClicked(event)"/>
+    <s:Label id="timeRemainingLabel"/>
+
+    <fx:Script><![CDATA[
+        private function onStartClicked(event:MouseEvent):void {
+            timeRemainingLabel.text = "25:00";
+        }
+        ]]></fx:Script>
+</s:Application>
