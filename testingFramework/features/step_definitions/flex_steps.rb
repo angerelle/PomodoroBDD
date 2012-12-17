@@ -17,5 +17,9 @@ Given /^I have started a pomodoro$/ do
 end
 
 When /^One second has gone by$/ do
- sleep 1
+ sleep 1.1
+end
+
+When /^One minute has gone by$/ do
+  sleep 60.1
 end

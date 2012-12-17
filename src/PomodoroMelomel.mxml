@@ -12,8 +12,23 @@
     <s:Label id="timeRemainingLabel"/>
 
     <fx:Script><![CDATA[
+        import uk.co.dilkusha.Pomodoro;
+
+        private var _timer:Timer;
+
+        private var _pomodoro:Pomodoro = new Pomodoro();
+
         private function onStartClicked(event:MouseEvent):void {
-            timeRemainingLabel.text = "25:00";
+            _pomodoro.start();
+            timeRemainingLabel.text = _pomodoro.timeLeft;
+            _timer = new Timer(1000, 1);
+            _timer.addEventListener(TimerEvent.TIMER, onTick, false, 0, true);
+            _timer.start();
+
+        }
+
+        private function onTick(event:TimerEvent):void {
+            timeRemainingLabel.text = "24:59";
         }
         ]]></fx:Script>
 </s:Application>
